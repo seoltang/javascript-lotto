@@ -7,8 +7,9 @@ const InputView = {
     BONUS: '\n보너스 번호를 입력해 주세요.\n',
   },
 
-  readInput(message, callback) {
+  readInput(message, callback, validate) {
     Console.readLine(message, (input) => {
+      validate(input);
       callback(input);
     });
   },
